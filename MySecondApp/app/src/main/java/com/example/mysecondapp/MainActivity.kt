@@ -14,20 +14,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 
-
-//use older version of material for the Scaffold - version 3 is still considered experimental
-
-import androidx.compose.material.rememberScaffoldState
-import androidx.compose.material.Icon
-import androidx.compose.material.FloatingActionButton
-import androidx.compose.material.Scaffold
-import androidx.compose.material.BottomAppBar
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.rememberDrawerState
-import androidx.compose.material.DrawerValue
-import androidx.compose.material.FabPosition
-import androidx.compose.material.OutlinedTextField
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Switch
@@ -35,11 +23,9 @@ import androidx.compose.material3.Switch
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kotlinx.coroutines.launch
 import com.example.mysecondapp.ui.theme.MySecondAppTheme
 
 
@@ -54,65 +40,12 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     //Greeting("Android")
-                    MyScaffold()
+                    ScreenPlay()
                 }
             }
         }
     }
 }
-@Composable
-fun MyScaffold() {
-    val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Closed))
-    val scope = rememberCoroutineScope()
-
-    Scaffold(
-        scaffoldState = scaffoldState,
-        topBar = {
-            TopAppBar(
-                title = { androidx.compose.material.Text("My Scaffold v2 App") },
-                navigationIcon = {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_baseline_menu_24),
-                        contentDescription = "Menu",
-                        modifier = Modifier.clickable {
-                            scope.launch {
-                                scaffoldState.drawerState.open()
-                            }
-                        }
-                    )
-                },
-                backgroundColor = androidx.compose.material.MaterialTheme.colors.primary
-            )
-        },
-        floatingActionButtonPosition = FabPosition.End,
-        floatingActionButton = {
-            FloatingActionButton(onClick = {
-                scope.launch {
-                    scaffoldState.drawerState.open()
-                }
-            }) {
-                androidx.compose.material.Text("!!")
-            }
-        },
-        drawerContent = { androidx.compose.material.Text(text = "Menu") },
-        content = { ScreenPlay() },
-        bottomBar = {
-            BottomAppBar(
-                backgroundColor = androidx.compose.material.MaterialTheme.colors.primary,
-            ) {
-                androidx.compose.material.Text(
-                    "Playing with the Screen!", textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth()
-                )
-            }
-        }
-    )
-
-}
-
-
-
-
 @Composable
 fun ScreenPlay() {
 
