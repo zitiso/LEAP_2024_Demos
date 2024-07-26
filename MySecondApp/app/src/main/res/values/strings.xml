@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MySecondApp</string>
+    <string name="screen_play_text">Foo!</string>
+</resources>
