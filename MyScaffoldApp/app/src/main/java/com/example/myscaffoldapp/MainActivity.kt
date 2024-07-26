@@ -9,14 +9,16 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 
-
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Slider
+import androidx.compose.material3.Switch
 
 //use older version of material for the Scaffold - version 3 is still considered experimental
-
+//Add androidx.compose.material @1.6.8 (latest stable version)
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.material.Icon
 import androidx.compose.material.FloatingActionButton
@@ -27,10 +29,6 @@ import androidx.compose.material.rememberDrawerState
 import androidx.compose.material.DrawerValue
 import androidx.compose.material.FabPosition
 import androidx.compose.material.OutlinedTextField
-import androidx.compose.material3.Checkbox
-import androidx.compose.material3.RadioButton
-import androidx.compose.material3.Slider
-import androidx.compose.material3.Switch
 
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -39,11 +37,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
-import com.example.myscaffoldapp.ui.theme.MyScaffoldAppTheme
-
-
-
 import kotlinx.coroutines.launch
+
+import com.example.myscaffoldapp.ui.theme.MyScaffoldAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,6 +58,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+//Newer linting is looking for version structure - this annotation turns that off
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MyScaffold() {
