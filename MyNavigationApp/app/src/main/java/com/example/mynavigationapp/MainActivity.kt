@@ -4,13 +4,11 @@ import android.os.Bundle
 
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -18,7 +16,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 import androidx.navigation.NavHostController
@@ -76,9 +73,7 @@ fun MyNavHost(
 
             composable("pageThree") {
                 PageThree(
-                    onNavigateToHome = { navController.navigate("home") },
-                    onNavigateToPageTwo = { navController.navigate("pageTwo") },
-                    onNavigateBack = { navController.popBackStack() }
+                    navController
                 )
             }
         }
@@ -125,20 +120,16 @@ fun PageTwo(
 }
 
 @Composable
-fun PageThree(
-    onNavigateBack: () -> Unit,
-    onNavigateToHome: () -> Unit,
-    onNavigateToPageTwo: () -> Unit
-) {
+fun PageThree(navController: NavHostController) {
     Column {
         Text("Page 3", color = Color.Green, fontSize = 30.sp)
         Spacer(
             modifier = Modifier.fillMaxHeight(.5f)
         )
         Row {
-            Button(onClick = onNavigateToHome) { Text("Home", fontSize = 30.sp) }
-            Button(onClick = onNavigateToPageTwo) { Text("Page 2", fontSize = 30.sp) }
-            Button(onClick = onNavigateBack) { Text("Back", fontSize = 30.sp) }
+            Button(onClick = {navController.navigate("home")}) { Text("Home", fontSize = 30.sp) }
+            Button(onClick = {navController.navigate("PageTwo")}) { Text("Page 2", fontSize = 30.sp) }
+            Button(onClick = {navController.popBackStack()}) { Text("Back", fontSize = 30.sp) }
         }
     }
 }
