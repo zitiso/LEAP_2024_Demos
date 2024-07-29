@@ -1,14 +1,14 @@
 package com.example.myroomdbapp
 
-import androidx.compose.material.Button
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text
+
+import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.getValue //manually add these!!
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
-//import androidx.compose.runtime.*  //option to all the imports above
 
 @Composable
 fun InsertTeamView(vm :TeamViewModel) {
@@ -20,7 +20,7 @@ fun InsertTeamView(vm :TeamViewModel) {
         label = { Text("Team name") } )
     OutlinedTextField( value = teamCity, // City TextField not shown
         onValueChange = {teamCity = it}, // styling/layout not shown
-        label = { Text("Team name") } )
+        label = { Text("Team city") } )
     Button(
         enabled = teamName != "" && teamCity != "", // enable if name/city entered
         onClick = {
