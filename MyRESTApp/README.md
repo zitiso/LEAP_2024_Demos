@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------------------------------------
-# REST Demo Steps
+# REST: Demo Steps
 
 1. **Set up the web service:**
     - 1. Download the teamservice.jar:
