@@ -1,5 +1,5 @@
 -----------------------------------------------------------------------------
-# ROOM Database Demo Steps
+# ROOM Database: Demo Steps
 
 1. **Create a new application:**
     - RoomDBDemoApp
