@@ -32,6 +32,8 @@
 5. **Test:**
     1. Check that the service is still running
     2. Run application on the emulator
+  
+   
 
-### More Information
+ **More Information**
 - [Using Retrofit for Network Calls in Android](https://dashwave.io/blog/using-retrofit-for-network-calls-in-android)
