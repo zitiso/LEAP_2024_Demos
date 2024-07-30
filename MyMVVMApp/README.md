@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------------------
-## MVVM: Demo Steps
+# MVVM: Demo Steps
 
 ### Create new application:
 - **Application Name:** RESTDemoApp
