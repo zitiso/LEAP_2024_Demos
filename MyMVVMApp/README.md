@@ -2,7 +2,7 @@
 # MVVM: Demo Steps
 
 ### Create new application:
-- **Application Name:** RESTDemoApp
+- **Application Name:** MVVMDemoApp
 
 ### Add dependencies using ‘File > Project Structure > Dependencies’:
 - **androidx.lifecycle:** lifecycle-viewmodel-compose@2.8.4
